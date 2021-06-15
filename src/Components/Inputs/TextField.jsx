@@ -1,10 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Field } from "formik";
 
 export function TextField(props) {
-  const { name, label, type, placeholder, required } = props;
-
-  useEffect(() => {});
+  const { name, label, type, placeholder, required, ...rest } = props;
 
   return (
     <>
@@ -14,6 +12,7 @@ export function TextField(props) {
         type={type}
         placeholder={placeholder || ""}
         required={required}
+        {...rest}
       />
     </>
   );

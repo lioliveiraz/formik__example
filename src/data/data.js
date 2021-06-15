@@ -312,7 +312,11 @@ export const formSchema = [
     component: "page",
     label: "Create your users details",
     _uid: "1dd4ec7c-fb53-47f4-af1b-1ab8f805b888",
-
+    conditional: {
+      value: false,
+      field:
+        "3a30803f-135f-442c-ab6e-d44d7d7a5164_6fgfgfs-f8ba-40b9-bf5d-0d57bc9c6a8d",
+    },
     fields: [
       {
         component: "field_group",
