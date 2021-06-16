@@ -2,7 +2,7 @@ import React from "react";
 import { Field } from "formik";
 
 export function SelectFields(props) {
-  const { name, label, type, options, required, ...rest } = props;
+  const { name, label, type, options, required, error, ...rest } = props;
 
   return (
     <>
@@ -13,6 +13,7 @@ export function SelectFields(props) {
           <option value={opt.value} label={opt.label} key={index} />
         ))}
       </Field>
+      <p>{error}</p>
     </>
   );
 }

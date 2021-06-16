@@ -5,17 +5,20 @@ import { SelectFields } from "./Inputs/SelectField";
 import { SubmitButton } from "./Base/SubmitButton";
 
 export function WrappedForm(props) {
-  const { handleSubmit, values, ...cxtProps } = useFormikContext();
+  const { handleSubmit, values, ...ctxProps } = useFormikContext();
   const { page, currentPageData, formSchema, setPage } = props;
 
   const getElement = (elementSchema) => {
     const { _uid, label, options, type, required, component, ...rest } =
       elementSchema;
+    const error = ctxProps.errors[_uid];
+
     let props = {
       name: _uid,
       label: label,
       type: type,
       required: required,
+      error,
       ...rest,
     };
 
@@ -61,35 +64,35 @@ export function WrappedForm(props) {
     setPage(findNextPage(direction === "next" ? page + 1 : page - 1));
   };
   return (
-    <Form onSubmit={handleSubmit}>
-      <h2>{currentPageData.label}</h2>
-      {currentPageData.fields
-        .filter(fieldMeetsCondition(values))
-        .map((field) => {
-          switch (field.component) {
-            case "field_group":
-              return field.fields.map((input) => getElement(input));
-            default:
-              return getElement(field);
-          }
-        })}
+    <>
+      <Form onSubmit={handleSubmit}>
+        <h2>{currentPageData.label}</h2>
+        {currentPageData.fields
+          .filter(fieldMeetsCondition(values))
+          .map((field) => {
+            switch (field.component) {
+              case "field_group":
+                return field.fields.map((input) => getElement(input));
+              default:
+                return getElement(field);
+            }
+          })}
 
-      {page > 0 && (
-        <button onClick={() => navigatePages("prev", values)}>
-          Previous Step
-        </button>
-      )}
-      {page + 1 < formSchema.length ? (
-        <button
-          onClick={() => {
-            navigatePages("next", values);
-          }}
-        >
-          Next Step
-        </button>
-      ) : (
-        <SubmitButton title="SUBMIT" />
-      )}
-    </Form>
+        {page > 0 && (
+          <div onClick={() => navigatePages("prev", values)}>Previous Step</div>
+        )}
+        {page + 1 < formSchema.length ? (
+          <div
+            onClick={() => {
+              navigatePages("next", values);
+            }}
+          >
+            Next Step
+          </div>
+        ) : (
+          <SubmitButton title="SUBMIT" />
+        )}
+      </Form>
+    </>
   );
 }

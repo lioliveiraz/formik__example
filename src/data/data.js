@@ -57,22 +57,22 @@ export const formSchema = [
           {
             component: "option",
             label: "Amsterdam",
-            value: "one",
+            value: "Amsterdam",
           },
           {
             component: "option",
             label: "Assendeflt",
-            value: "two",
+            value: "Assendeflt",
           },
           {
             component: "option",
             label: "Amstelven",
-            value: "two",
+            value: "Amstelven",
           },
           {
             component: "option",
             label: "Bergen",
-            value: "two",
+            value: "Bergen",
           },
         ],
       },
@@ -91,22 +91,22 @@ export const formSchema = [
           {
             component: "option",
             label: "Grote Melm",
-            value: "one",
+            value: "Grote Melm",
           },
           {
             component: "option",
             label: "Haspel",
-            value: "two",
+            value: "Haspel",
           },
           {
             component: "option",
             label: "Jaarsveld",
-            value: "two",
+            value: "Jaarsveld",
           },
           {
             component: "option",
             label: "Lage Vuursche",
-            value: "two",
+            value: "Lage Vuursche",
           },
         ],
       },
@@ -125,22 +125,22 @@ export const formSchema = [
           {
             component: "option",
             label: "Besselaar",
-            value: "one",
+            value: "Besselaar",
           },
           {
             component: "option",
             label: "Boxmeer",
-            value: "two",
+            value: "Boxmeer",
           },
           {
             component: "option",
             label: "Buurtje",
-            value: "two",
+            value: "Buurtje",
           },
           {
             component: "option",
             label: "De Bus",
-            value: "two",
+            value: "De Bus",
           },
         ],
       },
@@ -155,22 +155,22 @@ export const formSchema = [
           {
             component: "option",
             label: "Type 1",
-            value: "one",
+            value: "Type 1",
           },
           {
             component: "option",
             label: "Type 2",
-            value: "two",
+            value: "Type 2",
           },
           {
             component: "option",
             label: "Type 3",
-            value: "two",
+            value: "Type 3",
           },
           {
             component: "option",
             label: "Type 4",
-            value: "two",
+            value: "Type 4",
           },
         ],
       },
@@ -192,18 +192,23 @@ export const formSchema = [
           {
             component: "text",
             label: "use 1",
+            value: "use 1",
             type: "text",
             _uid: "5b9b79d2-32f2-42a1-b89f-203dfc0b6b98",
           },
           {
             component: "text",
             label: "use 2",
+            value: "use 2",
+
             type: "text",
             _uid: "543gdhgd-80a7-4427-b07b-4c1be1c6b186",
           },
           {
             component: "text",
             label: "use 3",
+            value: "use 3",
+
             type: "text",
             _uid: "4sdf43s-80a7-4427-b07b-4c1be1c6b186",
           },
@@ -233,7 +238,8 @@ export const formSchema = [
       },
       {
         component: "text",
-        label: "Are you current a customer?",
+        label:
+          "Are you current a customer?(click to trigger a conditional page)",
         type: "checkbox",
         required: false,
         _uid: "6fgfgfs-f8ba-40b9-bf5d-0d57bc9c6a8d",
@@ -254,7 +260,7 @@ export const formSchema = [
         component: "text",
         label: "Customer ID",
         type: "text",
-        required: true,
+        required: false,
         _uid: "a15bef56-ab67-4b98-a781-4441cc3bba56",
       },
       {
@@ -267,18 +273,23 @@ export const formSchema = [
           {
             component: "text",
             label: "Mr",
+            value: "Mr",
             type: "text",
             _uid: "65fhfty-32f2-42a1-b89f-203dfc0b6b98",
           },
           {
             component: "text",
             label: "Miss",
+            value: "Miss",
+
             type: "text",
             _uid: "fhtru7hy-80a7-4427-b07b-4c1be1c6b186",
           },
           {
             component: "text",
             label: "Ms",
+            value: "Ms",
+
             type: "text",
             _uid: "fsdfset5-80a7-4427-b07b-4c1be1c6b186",
           },
@@ -293,14 +304,14 @@ export const formSchema = [
             component: "text",
             label: "First Name",
             type: "text",
-            required: true,
+            required: false,
             _uid: "765fhkk-32f2-42a1-b89f-203dfc0b6b98",
           },
           {
             component: "text",
             label: "Last Name",
             type: "text",
-            required: true,
+            required: false,
 
             _uid: "9fghd4-80a7-4427-b07b-4c1be1c6b186",
           },
